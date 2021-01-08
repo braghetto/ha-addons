@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3
+
+- Using devel branch from Ripe Atlas Probe repository to solve some bugs when no ipv6
+
 ## 0.2
 
 - Documentation added

@@ -14,7 +14,7 @@ RUN apt-get update -y \
 
 WORKDIR /root
 
-RUN git clone --recursive "$GIT_URL"
+RUN git clone --branch devel --recursive "$GIT_URL"
 RUN ./ripe-atlas-software-probe/build-config/debian/bin/make-deb
 
 ## the actual image

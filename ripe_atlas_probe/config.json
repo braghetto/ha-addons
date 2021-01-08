@@ -1,6 +1,6 @@
 {
   "name": "Ripe Atlas Probe",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "ripe_atlas_probe",
   "description": "Unofficial port of Ripe Atlas Probe to hassio",
   "arch": ["armv7", "aarch64", "amd64"],
