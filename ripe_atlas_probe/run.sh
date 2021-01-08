@@ -48,6 +48,11 @@ if [ -f /var/atlas-probe/etc/probe_key.pub ]; then
 	echo
 	cat /var/atlas-probe/etc/probe_key.pub
 	echo
+else
+	echo
+	echo "FIRST RUN! CREATING YOUR KEYS NOW!"
+	echo "Restart this addon to see here you public key."
+	echo
 fi
 
 exec gosu atlas:atlas "$@"
