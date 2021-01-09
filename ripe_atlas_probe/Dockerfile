@@ -41,6 +41,10 @@ RUN ln -s /bin/true /bin/systemctl \
 	&& rm -f /tmp/atlasswprobe-*.deb \
 	&& ln -s /usr/local/atlas/bin/ATLAS /usr/local/bin/atlas
 
+RUN apt-get update \
+        && apt-get -y install sudo
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+
 COPY run.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/* \
 	&& chown -R atlas:atlas /var/atlas-probe \
@@ -50,6 +54,8 @@ RUN chmod +x /usr/local/bin/* \
 
 WORKDIR /var/atlas-probe
 
+RUN whoami
+
 ENTRYPOINT [ "run.sh" ]
-CMD [ "atlas" ]
+CMD [ "sudo", "atlas" ]
 

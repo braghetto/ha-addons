@@ -55,4 +55,4 @@ else
 	echo
 fi
 
-exec gosu atlas:atlas "$@"
+exec gosu root:root "$@"

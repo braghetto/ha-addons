@@ -1,6 +1,6 @@
 {
   "name": "Ripe Atlas Probe",
-  "version": "0.3",
+  "version": "0.4",
   "slug": "ripe_atlas_probe",
   "description": "Unofficial port of Ripe Atlas Probe to hassio",
   "arch": ["armv7", "aarch64", "amd64"],
@@ -10,7 +10,7 @@
     "2023/tcp": 2023,
     "8080/tcp": 8080
   },
-  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO"],
+  "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_RESOURCE", "SYS_MODULE"],
   "full_access": true,
   "tmpfs": "size=32m,uid=101,rw",
   "environment": {
