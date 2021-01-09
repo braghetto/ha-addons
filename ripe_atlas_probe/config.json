@@ -1,6 +1,6 @@
 {
   "name": "Ripe Atlas Probe",
-  "version": "0.4",
+  "version": "0.5",
   "slug": "ripe_atlas_probe",
   "description": "Unofficial port of Ripe Atlas Probe to hassio",
   "arch": ["armv7", "aarch64", "amd64"],
@@ -14,7 +14,7 @@
   "full_access": true,
   "tmpfs": "size=32m,uid=101,rw",
   "environment": {
-    "RXTXRPT": "no"
+    "RXTXRPT": "yes"
   },
   "options": {},
   "schema": {},

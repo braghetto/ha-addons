@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5
+
+- Traffic report enabled
+
 ## 0.4
 
 - Going root to use raw sockets.

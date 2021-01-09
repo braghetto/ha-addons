@@ -16,6 +16,11 @@ After a first run you can restart the addon and then see your public key in the 
 Now you need to use this key to register you probe at RIPE Atlas.
 [Apply for your RIPE Atlas probe](https://atlas.ripe.net/apply/swprobe/)
 
-To retrieve your probe keys and settings from a previous installation of this addon.
-First you need to have a snapshot that contains the Ripe Atlas Probe already configured.
-Then you can install this addon on your new system, and before starting it, recover your snapshot.
+
+In order to recover the same probe with the same credentials you need to take a snapshot. 
+At least partial only for this addon.
+
+
+To reinstall your same probe on a new system, restore your supervisor snapshot from the homeassitant. 
+A partial restore of this addon can also be made. 
+And if necessary, after recovery, update the addon.
