@@ -16,5 +16,7 @@
   "environment": {
     "RXTXRPT": "yes"
   },
+  "options": {},
+  "schema": {},
   "image": "arthurmb/haddon-{arch}-ripe-atlas-probe"
 }
