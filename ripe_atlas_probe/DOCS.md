@@ -23,4 +23,4 @@ At least partial only for this addon.
 
 To reinstall your same probe on a new system, restore your supervisor snapshot from the homeassitant. 
 A partial restore of this addon can also be made. 
-And if necessary, after recovery, update the addon.
+And if necessary, after restore, update the addon.

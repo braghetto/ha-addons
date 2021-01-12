@@ -25,6 +25,8 @@ LABEL io.hass.version="$BUILD_VERSION" io.hass.type="addon" io.hass.arch="$BUILD
 ARG DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 
+USER root
+
 COPY --from=builder /root/atlasswprobe-*.deb /tmp
 
 ARG ATLAS_UID=101
@@ -41,21 +43,13 @@ RUN ln -s /bin/true /bin/systemctl \
 	&& rm -f /tmp/atlasswprobe-*.deb \
 	&& ln -s /usr/local/atlas/bin/ATLAS /usr/local/bin/atlas
 
-RUN apt-get update \
-        && apt-get -y install sudo
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-
 COPY run.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/* \
-	&& chown -R atlas:atlas /var/atlas-probe \
 	&& mkdir -p /var/atlasdata \
-	&& chown -R atlas:atlas /var/atlasdata \
 	&& chmod 777 /var/atlasdata
 
 WORKDIR /var/atlas-probe
 
-RUN whoami
-
 ENTRYPOINT [ "run.sh" ]
-CMD [ "sudo", "atlas" ]
+CMD [ "atlas" ]
 

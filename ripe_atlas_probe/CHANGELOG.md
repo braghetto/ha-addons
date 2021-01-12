@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6
+
+- dev build scripts added
+- removing chown because we run everthing as root now
+
 ## 0.5
 
 - Traffic report enabled

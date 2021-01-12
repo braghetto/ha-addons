@@ -1,4 +1,4 @@
-# Home Assistant Add-on: Ripe Atlas Probe
+# Ripe Atlas Probe
 
 A port of RIPE Atlas Software Probe to run alongside with your Home Assistant.
 (Unofficial)
@@ -10,7 +10,7 @@ A port of RIPE Atlas Software Probe to run alongside with your Home Assistant.
 
 For more details about RIPE Atlas project go to [atlas.ripe.net](https://atlas.ripe.net/)
 
-For instructions about this addon look at DOCS.md
+
 
 
 This addon uses the original code from RIPE Atlas Software Probe at:
