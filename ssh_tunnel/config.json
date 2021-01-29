@@ -1,6 +1,6 @@
 {
   "name": "SSH Tunnel",
-  "version": "0.1",
+  "version": "0.2",
   "slug": "ssh_tunnel",
   "description": "Connect to a ssh server for port forwarding",
   "url": "https://github.com/braghetto/ha-addons/tree/main/ssh_tunnel",
@@ -27,5 +27,5 @@
     "other_ssh_options": "str",
     "monitor_port": "int"
   },
-  "image": "arthurmb/haddon-{arch}-ssh-tunel"
+  "image": "arthurmb/haddon-{arch}-ssh-tunnel"
 }
