@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 0.4
+
+- Changing key generation from rsa to ed25519
+- This version requires a fresh install
+
 ## 0.3
 
 - Exposing settings to ajust server keep alive

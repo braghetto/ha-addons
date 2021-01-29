@@ -15,24 +15,21 @@ ALIVE_INTERVAL="$(bashio::config 'server_alive_interval')"
 ALIVE_COUNT="$(bashio::config 'server_alive_count_max')"
 
 if [ ! -d "$KEY_PATH" ]; then
-    echo "Key Generation"
+    echo "Key Generation..."
     mkdir -p "$KEY_PATH"
-    ssh-keygen -b 4096 -t rsa -N "" -f "${KEY_PATH}/autossh_rsa_key"
-else
-    echo "Key Restore"
+    ssh-keygen -o -t ed25519 -N "" -f "${KEY_PATH}/autossh_key"
 fi
 
 echo "Your public key is: "
-cat "${KEY_PATH}/autossh_rsa_key.pub"
+cat "${KEY_PATH}/autossh_key.pub"
 
-command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=${ALIVE_INTERVAL} -o ServerAliveCountMax=${ALIVE_COUNT} ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_rsa_key"
+command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=${ALIVE_INTERVAL} -o ServerAliveCountMax=${ALIVE_COUNT} ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_key"
 
 if [ ! -z "$REMOTE_FORWARDING" ]; then
   while read -r line; do
     command_args="${command_args} -R $line"
   done <<< "$REMOTE_FORWARDING"
 fi
-
 
 if [ ! -z "$LOCAL_FORWARDING" ]; then
   while read -r line; do
@@ -49,5 +46,4 @@ ssh-keyscan -p $SSH_PORT $HOSTNAME || true
 command_args="${command_args} ${OTHER_SSH_OPTIONS}"
 
 echo "Running autossh using: ${command_args}"
-
 /usr/bin/autossh ${command_args}
