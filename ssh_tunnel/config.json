@@ -3,7 +3,7 @@
   "version": "0.1",
   "slug": "ssh_tunnel",
   "description": "Connect to a ssh server for port forwarding",
-  "url": "https://github.com/braghetto/ha-addons/ssh_tunel",
+  "url": "https://github.com/braghetto/ha-addons/tree/main/ssh_tunnel",
   "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
   "startup": "application",
   "boot": "auto",
