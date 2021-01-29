@@ -1,4 +1,4 @@
-# SSH Tunel
+# SSH Tunnel
 
 Port Forwarding from your Home Assitant to any ssh server using autossh.
 
