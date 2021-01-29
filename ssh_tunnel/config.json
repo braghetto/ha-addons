@@ -1,0 +1,31 @@
+{
+  "name": "SSH Tunnel",
+  "version": "0.1",
+  "slug": "ssh_tunnel",
+  "description": "Connect to a ssh server for port forwarding",
+  "url": "https://github.com/braghetto/ha-addons/ssh_tunel",
+  "arch": ["armv7", "armhf", "amd64", "aarch64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "map": ["config:rw"],
+  "options": {
+    "hostname": "",
+    "ssh_port": "22",
+    "username": "autossh",
+    "remote_forwarding": [":8123:172.17.0.1:8123"],
+    "local_forwarding": [""],
+    "other_ssh_options": "-nTC",
+    "monitor_port": "0"
+  },
+  "schema": {
+    "hostname": "str",
+    "ssh_port": "int",
+    "username": "str",
+    "remote_forwarding": ["str"],
+    "local_forwarding": ["str"],
+    "other_ssh_options": "str",
+    "monitor_port": "int"
+  },
+  "image": "arthurmb/haddon-{arch}-ssh-tunel"
+}
