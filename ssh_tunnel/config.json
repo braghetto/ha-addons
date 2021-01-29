@@ -1,6 +1,6 @@
 {
   "name": "SSH Tunnel",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "ssh_tunnel",
   "description": "Connect to a ssh server for port forwarding",
   "url": "https://github.com/braghetto/ha-addons/tree/main/ssh_tunnel",
@@ -16,7 +16,9 @@
     "remote_forwarding": [":8123:172.17.0.1:8123"],
     "local_forwarding": [""],
     "other_ssh_options": "-nTC",
-    "monitor_port": "0"
+    "monitor_port": "0",
+    "server_alive_interval": "20",
+    "server_alive_count_max": "3"
   },
   "schema": {
     "hostname": "str",
@@ -25,7 +27,9 @@
     "remote_forwarding": ["str"],
     "local_forwarding": ["str"],
     "other_ssh_options": "str",
-    "monitor_port": "int"
+    "monitor_port": "int",
+    "server_alive_interval": "int",
+    "server_alive_count_max": "int"
   },
   "image": "arthurmb/haddon-{arch}-ssh-tunnel"
 }

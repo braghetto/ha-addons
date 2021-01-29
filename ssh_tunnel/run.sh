@@ -11,6 +11,8 @@ REMOTE_FORWARDING="$(bashio::config 'remote_forwarding')"
 LOCAL_FORWARDING="$(bashio::config 'local_forwarding')"
 OTHER_SSH_OPTIONS="$(bashio::config 'other_ssh_options')"
 MONITOR_PORT="$(bashio::config 'monitor_port')"
+ALIVE_INTERVAL="$(bashio::config 'server_alive_interval')"
+ALIVE_COUNT="$(bashio::config 'server_alive_count_max')"
 
 if [ ! -d "$KEY_PATH" ]; then
     echo "Key Generation"
@@ -23,7 +25,7 @@ fi
 echo "Your public key is: "
 cat "${KEY_PATH}/autossh_rsa_key.pub"
 
-command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=20 -o ServerAliveCountMax=3 ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_rsa_key"
+command_args="-M ${MONITOR_PORT} -N -q -o ServerAliveInterval=${ALIVE_INTERVAL} -o ServerAliveCountMax=${ALIVE_COUNT} ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_rsa_key"
 
 if [ ! -z "$REMOTE_FORWARDING" ]; then
   while read -r line; do
@@ -46,6 +48,6 @@ ssh-keyscan -p $SSH_PORT $HOSTNAME || true
 
 command_args="${command_args} ${OTHER_SSH_OPTIONS}"
 
-echo "Autossh args are: ${command_args}"
+echo "Running autossh using: ${command_args}"
 
 /usr/bin/autossh ${command_args}
