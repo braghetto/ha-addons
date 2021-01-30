@@ -1,6 +1,10 @@
 # Changelog
 
 
+## 0.5
+
+- Cleanup
+
 ## 0.4
 
 - Changing key generation from rsa to ed25519
