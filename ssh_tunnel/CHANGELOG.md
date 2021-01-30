@@ -1,6 +1,10 @@
 # Changelog
 
 
+## 0.6
+
+- small fix
+
 ## 0.5
 
 - Cleanup

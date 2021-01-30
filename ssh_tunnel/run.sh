@@ -22,7 +22,7 @@ fi
 echo "Your public key is: "
 cat "${KEY_PATH}/autossh_key.pub"
 
-command_args="-N -q -o ServerAliveInterval=${ALIVE_INTERVAL} -o ServerAliveCountMax=${ALIVE_COUNT} ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_key"
+command_args="-M 0 -N -q -o ServerAliveInterval=${ALIVE_INTERVAL} -o ServerAliveCountMax=${ALIVE_COUNT} ${USERNAME}@${HOSTNAME} -p ${SSH_PORT} -i ${KEY_PATH}/autossh_key"
 
 if [ ! -z "$REMOTE_FORWARDING" ]; then
   while read -r line; do
