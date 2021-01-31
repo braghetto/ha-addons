@@ -1,0 +1,4 @@
+final-build.sh
+test-final-build.sh
+test-local-build.sh
+test-local-run.sh

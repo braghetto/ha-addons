@@ -3,7 +3,7 @@
 
 ## 0.6
 
-- small fix
+- production stage
 
 ## 0.5
 

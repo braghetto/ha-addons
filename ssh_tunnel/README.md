@@ -1,9 +1,15 @@
 # SSH Tunnel
 
-Port Forwarding from your Home Assistant to any ssh server using autossh.
+Port forwarding from your Home Assistant to any ssh server using autossh.
 
 ![Supports aarch64 Architecture][aarch64-shield] ![Supports amd64 Architecture][amd64-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports armhf Architecture][armhf-shield] ![Supports i386 Architecture][i386-shield]
 
+
+## About
+
+This addon starts and maintains ssh tunnels. 
+These tunnels can be configured to map multiple ports both locally and remotely.
+The ssh authentication uses ed25519 keys for better security and performance 
 
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
