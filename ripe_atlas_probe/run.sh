@@ -10,7 +10,6 @@ declare -a OPTIONS=(
 mkdir -p /data/ripe_probe/status
 mkdir -p /data/ripe_probe/etc
 mkdir -p /data/ripe_probe/state
-mkdir -p /tmpfs
 
 # create essential files
 mkdir -p /var/atlas-probe/status
@@ -23,8 +22,8 @@ cp -rf /var/atlas-probe/state/* /data/ripe_probe/state
 mount -o bind /data/ripe_probe/status /var/atlas-probe/status
 mount -o bind /data/ripe_probe/etc /var/atlas-probe/etc
 mount -o bind /data/ripe_probe/state /var/atlas-probe/state
-mount -o bind /tmpfs /var/atlasdata
-chmod 777 /tmpfs
+mount -o bind /tmp /var/atlasdata
+chmod 777 /tmp
 
 # set probe configuration
 for OPT in "${OPTIONS[@]}"; do

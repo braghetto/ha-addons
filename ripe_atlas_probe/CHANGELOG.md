@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7
+
+- tmpfs config fixed
+
 ## 0.6
 
 - dev build scripts added
