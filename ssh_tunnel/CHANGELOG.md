@@ -1,6 +1,9 @@
 # Changelog
 
+## 0.7
 
+- general updates
+ 
 ## 0.6
 
 - production stage

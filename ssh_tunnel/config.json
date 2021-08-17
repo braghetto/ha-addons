@@ -1,6 +1,6 @@
 {
   "name": "SSH Tunnel",
-  "version": "0.6",
+  "version": "0.7",
   "slug": "ssh_tunnel",
   "description": "SSH tunneling and port forwarding made by autossh",
   "url": "https://github.com/braghetto/ha-addons/tree/main/ssh_tunnel",
