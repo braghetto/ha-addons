@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8
+
+- build update
+
 ## 0.7
 
 - general updates
