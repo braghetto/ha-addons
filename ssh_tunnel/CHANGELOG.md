@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9
+
+- init bug fix
+
 ## 0.8
 
 - build update
