@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10
+
+- ssh client TCPKeepAlive enabled
+
 ## 0.9
 
 - init bug fix
